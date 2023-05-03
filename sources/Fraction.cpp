@@ -1,9 +1,6 @@
 #include <iostream>
 #include <string>
 #include <stdio.h>
-//#include <numeric>
-//#include <iomanip>
-//#include <math.h>
 #include "Fraction.hpp"
 
 namespace ariel{
@@ -46,6 +43,7 @@ namespace ariel{
     }
     
     void Fraction::setDenominator(int denominator){
+        if (denominator == 0) throw std::runtime_error("Error: Divide By Zero");
         this->denominator = denominator;
     }
 
@@ -219,15 +217,13 @@ namespace ariel{
     // The prefix ++ operator that adds 1 to the fraction:
     Fraction &Fraction::operator++(){
         //need to perform
-        Fraction franction;
-        return franction;
+        return *this;
     }
 
     // The prefix -- operator that substracts 1 from the fraction:
     Fraction &Fraction::operator--(){
         //need to perform
-        Fraction franction;
-        return franction;
+        return *this;
     }
 
     // The postfix ++ operator that adds 1 to the fraction:
@@ -245,13 +241,13 @@ namespace ariel{
     }
 
     // The << operator to print a fraction to an output stream in the format “numerator/denominator”:
-    ostream &operator<<(ostream &stream, const Fraction &frac){
+    std::ostream &operator<<(std::ostream &stream, const Fraction &fruc){
         //need to perform
         return stream;
     }
 
     // The >> operator to read a fraction from an input stream by taking two integers as input:
-    istream &operator>>(istream &stream, Fraction &frac){
+    std::istream& operator>>(std::istream& stream, Fraction& frac){
         //need to perform
         return stream;
     }

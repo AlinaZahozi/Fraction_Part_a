@@ -92,9 +92,9 @@ class Fraction {
         Fraction operator--(int);
 
         // The << operator to print a fraction to an output stream in the format “numerator/denominator”:
-        friend ostream &operator<<(ostream &stream, const Fraction &frac);
+        friend std::ostream &operator<<(std::ostream &stream, const Fraction &fruc);
 
         // The >> operator to read a fraction from an input stream by taking two integers as input:
-        friend istream& operator>>(istream& stream, Fraction& frac);
+        friend std::istream& operator>>(std::istream& strem, Fraction& frac);
     };
 }
